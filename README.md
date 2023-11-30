@@ -1,6 +1,6 @@
 # practice-problems
 
-Just a repo of solutions I've done while working through leetcode.
+Just a repo for all the problems I've solved while working through leetcode.
 
 Organized into Java & Python folders.
 
