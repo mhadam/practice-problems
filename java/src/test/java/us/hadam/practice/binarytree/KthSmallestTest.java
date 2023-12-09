@@ -11,11 +11,11 @@ import org.junit.jupiter.params.provider.MethodSource;
 import us.hadam.practice.binarytree.util.BinarySearchTree;
 import us.hadam.practice.binarytree.util.TreeNode;
 
-public class KthSmallestTest {
+ class KthSmallestTest {
 
   @ParameterizedTest
   @MethodSource("argsProvider")
-  public void testKthSmallest(TreeNode root, int k, int expected) {
+   void testKthSmallest(TreeNode root, int k, int expected) {
     assertEquals(kthSmallestIterative(root, k), expected);
   }
 

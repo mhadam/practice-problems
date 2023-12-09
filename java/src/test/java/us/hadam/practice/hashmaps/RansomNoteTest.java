@@ -9,11 +9,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class RansomNoteTest {
+ class RansomNoteTest {
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-  public void testRansom(String ransomNote, String magazine, boolean expected) {
+   void testRansom(String ransomNote, String magazine, boolean expected) {
     boolean result = canConstruct(ransomNote, magazine);
     assertEquals(result, expected);
   }

@@ -9,10 +9,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class MergeArraysTest {
+ class MergeArraysTest {
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-  public void mergesCorrectly(int[] nums1, int l1, int[] nums2, int l2, int[] expected) {
+   void mergesCorrectly(int[] nums1, int l1, int[] nums2, int l2, int[] expected) {
     merge(nums1, l1, nums2, l2);
     assertArrayEquals(expected, nums1);
   }

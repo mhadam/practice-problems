@@ -13,13 +13,13 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class TriangleTest {
+ class TriangleTest {
 
   static ObjectMapper mapper = new ObjectMapper();
 
   @ParameterizedTest
   @MethodSource("provider")
-  public void testMinimumTotal(List<List<Integer>> input, int expected) {
+   void testMinimumTotal(List<List<Integer>> input, int expected) {
     int result = minimumTotal(input);
     assertEquals(expected, result);
   }

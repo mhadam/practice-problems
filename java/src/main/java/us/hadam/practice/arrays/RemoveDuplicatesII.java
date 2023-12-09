@@ -1,6 +1,5 @@
 package us.hadam.practice.arrays;
 
-
 public class RemoveDuplicatesII {
   public static int removeDuplicates(int[] nums) {
     int i = 1, pi = 1;

@@ -9,11 +9,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class RemoveDuplicatesIITest {
+ class RemoveDuplicatesIITest {
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-  public void testRemoveDuplicates(int[] nums, int[] expectedArr, int expectedCount) {
+   void testRemoveDuplicates(int[] nums, int[] expectedArr, int expectedCount) {
     int result = removeDuplicates(nums);
     assertArrayEquals(expectedArr, nums);
     assertEquals(expectedCount, result);

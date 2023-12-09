@@ -9,11 +9,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class MinSubArrayLenTest {
+ class MinSubArrayLenTest {
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-  public void testMinSubArrayLen(int target, int[] nums, int expected) {
+   void testMinSubArrayLen(int target, int[] nums, int expected) {
     int actual = minSubArrayLen(target, nums);
     assertEquals(expected, actual);
   }

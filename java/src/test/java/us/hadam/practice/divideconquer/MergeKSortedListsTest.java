@@ -11,11 +11,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class MergeKSortedListsTest {
+ class MergeKSortedListsTest {
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-  public void testMergeKLists(int[][] lists, int[] expected) {
+   void testMergeKLists(int[][] lists, int[] expected) {
     MergeKSortedLists.ListNode[] input = generateLists(lists);
     MergeKSortedLists.ListNode result = mergeKLists(input);
     assertArrayEquals(expected, getResult(result));
@@ -23,7 +23,7 @@ public class MergeKSortedListsTest {
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-  public void testMergeKListsDandC(int[][] lists, int[] expected) {
+   void testMergeKListsDandC(int[][] lists, int[] expected) {
     MergeKSortedLists.ListNode[] input = generateLists(lists);
     MergeKSortedLists.ListNode result = mergeKListsDivideConquer(input);
     assertArrayEquals(expected, getResult(result));
@@ -31,7 +31,7 @@ public class MergeKSortedListsTest {
 
   @ParameterizedTest
   @MethodSource("mergeTwoListsProvider")
-  public void testMergeTwoLists(int[] list1, int[] list2, int[] expected) {
+   void testMergeTwoLists(int[] list1, int[] list2, int[] expected) {
     MergeKSortedLists.ListNode l1 = generateList(list1);
     MergeKSortedLists.ListNode l2 = generateList(list2);
     MergeKSortedLists.ListNode result = mergeLists(l1, l2);

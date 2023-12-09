@@ -12,11 +12,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class TwoSumTest {
+ class TwoSumTest {
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-  public void testTwoSum(int[] nums, int target, int[] expected) {
+   void testTwoSum(int[] nums, int target, int[] expected) {
     int[] result = twoSum(nums, target);
     List<Integer> l1 = Arrays.stream(expected).boxed().toList();
     List<Integer> l2 = Arrays.stream(result).boxed().toList();

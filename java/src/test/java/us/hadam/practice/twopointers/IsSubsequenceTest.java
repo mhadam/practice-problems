@@ -9,11 +9,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class IsSubsequenceTest {
+ class IsSubsequenceTest {
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-  public void testIsSubsequence(String sub, String value, boolean expected) {
+   void testIsSubsequence(String sub, String value, boolean expected) {
     assertEquals(isSubsequence(sub, value), expected);
   }
 
