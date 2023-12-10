@@ -45,6 +45,7 @@ public class LRUCache {
   void put(int key, int value) {
     if (map.containsKey(key)) {
       ListNode existing = map.get(key);
+      existing.val = value;
       remove(existing);
       add(existing);
       return;
