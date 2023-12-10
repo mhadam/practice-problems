@@ -9,23 +9,23 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
- class IsPalindromeTest {
+class IsPalindromeTest {
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-   void testIsPalindrome(String value, boolean expected) {
+  void testIsPalindrome(String value, boolean expected) {
     assertEquals(isPalindrome(value), expected);
   }
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-   void testIsPalindromePointers(String value, boolean expected) {
+  void testIsPalindromePointers(String value, boolean expected) {
     assertEquals(isPalindromePointersMethod(value), expected);
   }
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-   void testIsPalindromeIndex(String value, boolean expected) {
+  void testIsPalindromeIndex(String value, boolean expected) {
     assertEquals(isPalindromeIndexMethod(value), expected);
   }
 

@@ -1,8 +1,6 @@
 package us.hadam.practice.binarytree;
 
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import us.hadam.practice.binarytree.util.TreeNode;
 
 public class KthSmallest {
@@ -20,11 +18,31 @@ public class KthSmallest {
   }
 
   public static List<Integer> traverse(TreeNode root) {
-    return null;
+    if (root == null) {
+      return Collections.emptyList();
+    }
+    List<Integer> result = new ArrayList<>();
+    result.addAll(traverse(root.left));
+    result.add(root.val);
+    result.addAll(traverse(root.right));
+    return result;
+  }
+
+  public static int kthSmallestIterAgain(TreeNode root, int k) {
+    LinkedList<TreeNode> stack = new LinkedList<>();
+    while (true) {
+      while (root != null) {
+        stack.push(root);
+        root = root.left;
+      }
+      root = stack.pop();
+      if (--k == 0) return root.val;
+      root = root.right;
+    }
   }
 
   public static int kthSmallestRecursive(TreeNode root, int k) {
     List<Integer> vals = traverse(root);
-    return vals.get(vals.size() - k);
+    return vals.get(k - 1);
   }
 }

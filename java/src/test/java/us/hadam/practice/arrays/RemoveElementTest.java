@@ -10,10 +10,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
- class RemoveElementTest {
+class RemoveElementTest {
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-   void testRemove(int[] nums, int val, int[] expected, int expectedRemoved) {
+  void testRemove(int[] nums, int val, int[] expected, int expectedRemoved) {
     int result = removeElement(nums, val);
     assertArrayEquals(expected, nums);
     assertEquals(expectedRemoved, result);

@@ -12,18 +12,18 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
- class SummaryRangesTest {
+class SummaryRangesTest {
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-   void testSummaryRanges(int[] nums, List<String> expected) {
+  void testSummaryRanges(int[] nums, List<String> expected) {
     List<String> result = summaryRanges(nums);
     assertIterableEquals(result, expected);
   }
 
   @ParameterizedTest
   @MethodSource("argsAndExpectedProvider")
-   void testSummaryRangesIndex(int[] nums, List<String> expected) {
+  void testSummaryRangesIndex(int[] nums, List<String> expected) {
     List<String> result = summaryRangesIndex(nums);
     assertIterableEquals(result, expected);
   }

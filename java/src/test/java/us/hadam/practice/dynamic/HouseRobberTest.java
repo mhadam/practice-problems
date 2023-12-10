@@ -9,11 +9,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
- class HouseRobberTest {
+class HouseRobberTest {
 
   @ParameterizedTest
   @MethodSource("provider")
-   void testRob(int[] input, int expected) {
+  void testRob(int[] input, int expected) {
     int result = rob(input);
     assertEquals(result, expected);
   }
