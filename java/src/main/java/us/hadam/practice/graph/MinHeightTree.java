@@ -25,7 +25,7 @@ public class MinHeightTree {
     }
 
     // initial leaves
-    List<Integer> leaves = new ArrayList<>();
+    Set<Integer> leaves = new HashSet<>();
     for (int i=0; i<n; i++) {
       if (neighbors.get(i).size() == 1) {
         leaves.add(i);
@@ -35,18 +35,18 @@ public class MinHeightTree {
     int remaining = n;
     while (remaining > 2) {
       remaining -= leaves.size();
-      List<Integer> newLeaves = new ArrayList<>();
+      Set<Integer> newLeaves = new HashSet<>();
       for (Integer leaf: leaves) {
         for (Integer neighbor: neighbors.get(leaf)) {
           Set<Integer> hood = neighbors.get(neighbor);
           hood.remove(leaf);
-          if (hood.size() == 1) {
+          if (hood.size() <= 1) {
             newLeaves.add(neighbor);
           }
         }
       }
       leaves = newLeaves;
     }
-    return leaves;
+    return leaves.stream().toList();
   }
 }
