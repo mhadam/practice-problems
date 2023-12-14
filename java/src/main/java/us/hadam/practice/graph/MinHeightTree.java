@@ -13,12 +13,12 @@ public class MinHeightTree {
     }
     // initialize with empty sets
     List<Set<Integer>> neighbors = new ArrayList<>();
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
       neighbors.add(new HashSet<>());
     }
 
     // add every neighbor
-    for (int[] edge: edges) {
+    for (int[] edge : edges) {
       int start = edge[0], end = edge[1];
       neighbors.get(start).add(end);
       neighbors.get(end).add(start);
@@ -26,7 +26,7 @@ public class MinHeightTree {
 
     // initial leaves
     Set<Integer> leaves = new HashSet<>();
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
       if (neighbors.get(i).size() == 1) {
         leaves.add(i);
       }
@@ -36,8 +36,8 @@ public class MinHeightTree {
     while (remaining > 2) {
       remaining -= leaves.size();
       Set<Integer> newLeaves = new HashSet<>();
-      for (Integer leaf: leaves) {
-        for (Integer neighbor: neighbors.get(leaf)) {
+      for (Integer leaf : leaves) {
+        for (Integer neighbor : neighbors.get(leaf)) {
           Set<Integer> hood = neighbors.get(neighbor);
           hood.remove(leaf);
           if (hood.size() <= 1) {
