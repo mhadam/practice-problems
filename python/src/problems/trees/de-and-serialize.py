@@ -2,8 +2,6 @@
 import collections
 import itertools
 import json
-import math
-from typing import Optional, Generator, Iterator
 
 
 class TreeNode(object):
@@ -71,7 +69,7 @@ class Codec:
             next_prev = []
             for i, el in enumerate(layer):
                 if el is None:
-                    el = 'null'
+                    el = "null"
                 if i % 2 == 0:
                     prev[i // 2].left = TreeNode(el)
                     next_prev.append(prev[i // 2].left)
@@ -85,13 +83,13 @@ class Codec:
 
 
 class RecursiveCodec:
-    def serialize(self, root: 'TreeNode') -> str:
+    def serialize(self, root: "TreeNode") -> str:
         """Encodes a tree to a single string."""
         s = []
 
-        def preorder(root: 'TreeNode') -> None:
+        def preorder(root: "TreeNode") -> None:
             if not root:
-                s.append('n')
+                s.append("n")
                 return
 
             s.append(str(root.val))
@@ -99,15 +97,15 @@ class RecursiveCodec:
             preorder(root.right)
 
         preorder(root)
-        return ' '.join(s)
+        return " ".join(s)
 
-    def deserialize(self, data: str) -> 'TreeNode':
+    def deserialize(self, data: str) -> "TreeNode":
         """Decodes your encoded data to tree."""
         q = collections.deque(data.split())
 
-        def preorder() -> 'TreeNode':
+        def preorder() -> "TreeNode":
             s = q.popleft()
-            if s == 'n':
+            if s == "n":
                 return None
 
             root = TreeNode(s)
@@ -125,7 +123,7 @@ class RecursiveCodec:
 # de = Codec().deserialize('[1,2]')
 # result = Codec().serialize(de)
 
-de = RecursiveCodec().deserialize('1 2 n n 3 n 4 n n')
+de = RecursiveCodec().deserialize("1 2 n n 3 n 4 n n")
 result = RecursiveCodec().serialize(de)
 
 pass

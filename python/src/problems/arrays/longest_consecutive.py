@@ -1,3 +1,7 @@
+import itertools
+from typing import List
+
+
 def longest_consecutive(nums: List[int]) -> int:
     result = 0
     num_set = set(nums)

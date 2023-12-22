@@ -26,12 +26,12 @@ def generate_matrix(n):
     :rtype: List[List[int]]
     """
     result = [list(range(n)) for _ in range(n)]
-    x, y = n-1, 0
-    c = n-1
+    x, y = n - 1, 0
+    c = n - 1
     vn = 1
     vs = [(1, 0), (0, 1), (-1, 0), (0, -1)]
-    result[0] = list(range(1, n+1))
-    rest = list(range(n+1, n*n+1))
+    result[0] = list(range(1, n + 1))
+    rest = list(range(n + 1, n * n + 1))
     while c > 0:
         for i in range(2):
             for j in range(c):
